@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Adventures | Shahid Sheikh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* Custom CSS for slider */
+      .destination-slider {
+        position: relative;
+        overflow: hidden;
+      }
+      .slider-container {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .slider-item {
+        min-width: 100%;
+      }
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+      .slider-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .dot.active {
+        background-color: #4f46e5; /* indigo-600 */
+      }
+      @media (min-width: 768px) {
+        .slider-item {
+          min-width: 50%;
+        }
+      }
+      @media (min-width: 1024px) {
+        .slider-item {
+          min-width: 33.33%;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="index.html"
+            ><div class="text-2xl font-bold text-indigo-700">
+              Shahid Sheikh
+            </div></a
+          >
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >About</a
+            >
+            <a
+              href="travel.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Travel</a
+            >
+            <a
+              href="image-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Photo Gallery</a
+            >
+            <a
+              href="video-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Video Gallery</a
+            >
+            <a
+              href="achievments.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Acheivments</a
+            >
+          </nav>
+
+          <!-- Hamburger Button -->
+<button id="menu-toggle" class="md:hidden text-black focus:outline-none">
+  <svg
+    class="w-7 h-7"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"
+    ></path>
+  </svg>
+</button>
+
+<!-- Sidebar Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 left-0 h-full w-64 bg-black bg-opacity-95 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+>
+  <div class="flex justify-between items-center p-4 border-b border-gray-700">
+    <span class="text-xl font-semibold">Menu</span>
+    <button id="menu-close" class="text-white focus:outline-none">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <nav class="flex flex-col p-6 space-y-4 text-lg">
+    <a href="index.html" class="hover:text-indigo-400">Home</a>
+    <a href="about.html" class="hover:text-indigo-400">About</a>
+    <a href="travel.html" class="hover:text-indigo-400">Travel</a>
+    <a href="image-gallery.html" class="hover:text-indigo-400">Photo Gallery</a>
+    <a href="video-gallery.html" class="hover:text-indigo-400">Video Gallery</a>
+    <a href="achievments.html" class="hover:text-indigo-400">Acheivments</a>
+  </nav>
+</div>
+      </div>
+    </header>
+
+    <!-- Featured Destinations with Slider -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Featured Destinations
+        </h2>
+
+        <div class="destination-slider">
+          <div class="slider-container" id="sliderContainer">
+            <!-- Destination 1 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img1.jpg"
+                  alt="Japan"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Japan</h3>
+                  <p class="text-gray-600 mb-4">Spring 2023</p>
+                  <p class="text-gray-600">
+                    Experienced cherry blossom season in Kyoto, explored Tokyo's
+                    vibrant neighborhoods, and soaked in traditional onsens in
+                    Hakone.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Culture</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Food</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 2 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img3.jpg"
+                  alt="Peru"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Peru</h3>
+                  <p class="text-gray-600 mb-4">Fall 2022</p>
+                  <p class="text-gray-600">
+                    Hiked the Inca Trail to Machu Picchu, explored the Amazon
+                    rainforest, and tasted incredible Peruvian cuisine in Lima.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >History</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Hiking</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 3 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img4.jpg"
+                  alt="Italy"
+                  class="w-full h-64 object-cover rounded-t-lg"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Italy</h3>
+                  <p class="text-gray-600 mb-4">Summer 2021</p>
+                  <p class="text-gray-600">
+                    From the canals of Venice to the ruins of Rome and the
+                    vineyards of Tuscany, Italy offered endless beauty and
+                    delicious food.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Art</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Food</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >History</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 4 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img5.jpg"
+                  alt="Machu Picchu"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">Machu Picchu</h3>
+                  <p class="text-gray-600 mb-4">Fall 2022</p>
+                  <p class="text-gray-600">
+                    The ancient Inca city nestled high in the Andes Mountains,
+                    one of the New Seven Wonders of the World.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >History</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Hiking</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 5 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img6.jpg"
+                  alt="Safari"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">African Safari</h3>
+                  <p class="text-gray-600 mb-4">Winter 2020</p>
+                  <p class="text-gray-600">
+                    Witnessed the great migration in Serengeti and explored the
+                    vast plains of Masai Mara.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Wildlife</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 6-->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img7.jpg"
+                  alt="Safari"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">African Safari</h3>
+                  <p class="text-gray-600 mb-4">Winter 2020</p>
+                  <p class="text-gray-600">
+                    Witnessed the great migration in Serengeti and explored the
+                    vast plains of Masai Mara.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Wildlife</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 7 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img8.jpg"
+                  alt="Safari"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">African Safari</h3>
+                  <p class="text-gray-600 mb-4">Winter 2020</p>
+                  <p class="text-gray-600">
+                    Witnessed the great migration in Serengeti and explored the
+                    vast plains of Masai Mara.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Wildlife</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 8 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img9.jpg"
+                  alt="Safari"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">African Safari</h3>
+                  <p class="text-gray-600 mb-4">Winter 2020</p>
+                  <p class="text-gray-600">
+                    Witnessed the great migration in Serengeti and explored the
+                    vast plains of Masai Mara.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Wildlife</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 9 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img
+                  src="assets/img10.jpg"
+                  alt="Safari"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">African Safari</h3>
+                  <p class="text-gray-600 mb-4">Winter 2020</p>
+                  <p class="text-gray-600">
+                    Witnessed the great migration in Serengeti and explored the
+                    vast plains of Masai Mara.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Wildlife</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination 10 -->
+            <div class="slider-item p-2">
+              <div
+                class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full"
+              >
+                <img src="assets/img12.jpg" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">African Safari</h3>
+                  <p class="text-gray-600 mb-4">Winter 2020</p>
+                  <p class="text-gray-600">
+                    Witnessed the great migration in Serengeti and explored the
+                    vast plains of Masai Mara.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Wildlife</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Adventure</span
+                    >
+                    <span
+                      class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
+                      >Nature</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Navigation -->
+          <div class="slider-nav">
+            <button
+              class="bg-white p-2 rounded-full shadow-md ml-4 focus:outline-none"
+              id="prevBtn"
+            >
+              <i class="fas fa-chevron-left text-indigo-600"></i>
+            </button>
+            <button
+              class="bg-white p-2 rounded-full shadow-md mr-4 focus:outline-none"
+              id="nextBtn"
+            >
+              <i class="fas fa-chevron-right text-indigo-600"></i>
+            </button>
+          </div>
+
+          <!-- Slider Dots -->
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="image-gallery.html"
+            class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-300"
+          >
+            View in Gallery
+          </a>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

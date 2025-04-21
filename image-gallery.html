@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahid Sheikh | Photo Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .gallery-hero {
+        background-image: url("gallery-banner.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="index.html"
+            ><div class="text-2xl font-bold text-indigo-700">
+              Shahid Sheikh
+            </div></a
+          >
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >About</a
+            >
+            <a
+              href="travel.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Travel</a
+            >
+            <a
+              href="image-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Photo Gallery</a
+            >
+            <a
+              href="video-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Video Gallery</a
+            >
+            <a
+              href="achievments.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Acheivments</a
+            >
+          </nav>
+
+          <!-- Hamburger Button -->
+<button id="menu-toggle" class="md:hidden text-black focus:outline-none">
+  <svg
+    class="w-7 h-7"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"
+    ></path>
+  </svg>
+</button>
+
+<!-- Sidebar Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 left-0 h-full w-64 bg-black bg-opacity-95 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+>
+  <div class="flex justify-between items-center p-4 border-b border-gray-700">
+    <span class="text-xl font-semibold">Menu</span>
+    <button id="menu-close" class="text-white focus:outline-none">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <nav class="flex flex-col p-6 space-y-4 text-lg">
+    <a href="index.html" class="hover:text-indigo-400">Home</a>
+    <a href="about.html" class="hover:text-indigo-400">About</a>
+    <a href="travel.html" class="hover:text-indigo-400">Travel</a>
+    <a href="image-gallery.html" class="hover:text-indigo-400">Photo Gallery</a>
+    <a href="video-gallery.html" class="hover:text-indigo-400">Video Gallery</a>
+    <a href="achievments.html" class="hover:text-indigo-400">Acheivments</a>
+  </nav>
+</div>
+      </div>
+    </header>
+
+    <!-- Gallery Hero Banner -->
+    <section
+      class="gallery-hero relative text-white py-32 bg-center bg-cover"
+      style="background-image: url('assets/photography.jpg')"
+    >
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">Photo Gallery</h1>
+          <p class="text-xl md:text-2xl mb-8">
+            A visual journey through my favorite moments and destinations
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <!-- Filter Buttons Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-0">
+            My Photography
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="filter-btn px-4 py-2 bg-indigo-600 text-white rounded-full font-medium"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded-full font-medium hover:bg-gray-300"
+              data-filter="cities"
+            >
+              Cities
+            </button>
+            <button
+              class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded-full font-medium hover:bg-gray-300"
+              data-filter="culture"
+            >
+              Culture
+            </button>
+            <button
+              class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded-full font-medium hover:bg-gray-300"
+              data-filter="people"
+            >
+              People
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Gallery Item 1 - Cities -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="cities"
+          >
+            <img
+              src="assets/img1.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">Swiss Alps</h3>
+                <p class="text-gray-300 text-sm">June 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2 - Cities -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="cities"
+          >
+            <img
+              src="assets/img2.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">Paris Streets</h3>
+                <p class="text-gray-300 text-sm">March 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3 - Cities -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="cities"
+          >
+            <img
+              src="assets/img3.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">
+                  Mediterranean Sunset
+                </h3>
+                <p class="text-gray-300 text-sm">August 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4 - Culture -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="culture"
+          >
+            <img
+              src="assets/img4.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">Desert Camp</h3>
+                <p class="text-gray-300 text-sm">January 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5 - Culture -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="culture"
+          >
+            <img
+              src="assets/img5.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">
+                  Tokyo Nightlife
+                </h3>
+                <p class="text-gray-300 text-sm">May 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 6 - Culture -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="culture"
+          >
+            <img
+              src="assets/img12.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">
+                  Amsterdam Canals
+                </h3>
+                <p class="text-gray-300 text-sm">September 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 7 - People -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="people"
+          >
+            <img
+              src="assets/img7.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">Nordic Aurora</h3>
+                <p class="text-gray-300 text-sm">December 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 8 - People -->
+          <div
+            class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300"
+            data-category="people"
+          >
+            <img
+              src="assets/img8.jpg"
+              alt="Gallery Image"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <div class="text-center p-4">
+                <h3 class="text-white font-bold text-lg mb-2">Local Cuisine</h3>
+                <p class="text-gray-300 text-sm">Various</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+          <button
+            class="border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-medium hover:bg-indigo-600 hover:text-white transition duration-300"
+          >
+            Load More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photography Equipment -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            My Photography Gear
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            The tools I use to capture my travel moments
+          </p>
+          <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Gear 1 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-md transition duration-300"
+          >
+            <div
+              class="bg-indigo-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Main Camera</h3>
+            <p class="text-gray-600">Sony A7 IV</p>
+            <p class="text-gray-500 text-sm mt-2">
+              Full-frame mirrorless with 33MP
+            </p>
+          </div>
+
+          <!-- Gear 2 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-md transition duration-300"
+          >
+            <div
+              class="bg-indigo-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Lenses</h3>
+            <p class="text-gray-600">Variety Collection</p>
+            <p class="text-gray-500 text-sm mt-2">16-35mm, 24-70mm, 70-200mm</p>
+          </div>
+
+          <!-- Gear 3 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-md transition duration-300"
+          >
+            <div
+              class="bg-indigo-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Drone</h3>
+            <p class="text-gray-600">DJI Mavic 3</p>
+            <p class="text-gray-500 text-sm mt-2">4K aerial photography</p>
+          </div>
+
+          <!-- Gear 4 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-md transition duration-300"
+          >
+            <div
+              class="bg-indigo-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Mobile</h3>
+            <p class="text-gray-600">iPhone 16 Pro Max</p>
+            <p class="text-gray-500 text-sm mt-2">For quick shots and videos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photography Tips -->
+    <section class="py-20 bg-indigo-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Photography Tips
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Learn from my travel photography experiences
+          </p>
+          <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <!-- Tip 1 -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+              <span
+                class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4"
+                >1</span
+              >
+              Golden Hour Magic
+            </h3>
+            <p class="text-gray-600 ml-12">
+              Always plan to shoot during golden hour (the first hour after
+              sunrise and last hour before sunset). The soft, warm light creates
+              magical tones and long shadows that add depth to your images. Some
+              of my best travel photos were taken during these times.
+            </p>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+              <span
+                class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4"
+                >2</span
+              >
+              Composition Techniques
+            </h3>
+            <p class="text-gray-600 ml-12">
+              Use the rule of thirds, leading lines, and framing to create
+              compelling compositions. Don't be afraid to break the rules once
+              you understand them. Look for unique perspectives - sometimes
+              getting low to the ground or finding a high vantage point can
+              transform an ordinary scene.
+            </p>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+              <span
+                class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4"
+                >3</span
+              >
+              Capturing Local Life
+            </h3>
+            <p class="text-gray-600 ml-12">
+              Some of the most memorable travel photos aren't of landmarks but
+              of everyday life. Visit local markets, observe morning routines,
+              and capture authentic moments. Always ask permission when
+              photographing people, and learn how to say "may I take your photo"
+              in the local language.
+            </p>
+          </div>
+
+          <!-- Tip 4 -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+              <span
+                class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4"
+                >4</span
+              >
+              Travel Light but Right
+            </h3>
+            <p class="text-gray-600 ml-12">
+              You don't need all your gear for every outing. Choose lenses based
+              on what you plan to shoot that day. A versatile zoom lens is great
+              for daytime exploration, while a fast prime lens is perfect for
+              low-light situations and portraits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Photo of the Month -->
+    <section class="py-20 bg-indigo-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Featured Photo of the Month
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            My special selection with behind-the-scenes stories
+          </p>
+          <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-2/3">
+                <img 
+                  src="assets/img7.jpg" 
+                  alt="Featured Photo" 
+                  class="w-full h-full object-cover"
+                >
+              </div>
+              <div class="md:w-1/3 p-8">
+                <div class="flex items-center mb-4">
+                  <span class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full mr-3">NEW</span>
+                  <span class="text-gray-500 text-sm">April 2024</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">Sunrise at Santorini</h3>
+                <p class="text-gray-600 mb-4">
+                  Captured during my Greek islands tour, this sunrise photo required waking up at 4 AM and hiking to this vantage point. The soft morning light created perfect conditions.
+                </p>
+                <div class="space-y-3">
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="text-gray-700">Shutter Speed: 1/200s</span>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                    </svg>
+                    <span class="text-gray-700">Aperture: f/8</span>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                    </svg>
+                    <span class="text-gray-700">Lens: Sony 16-35mm f/2.8</span>
+                  </div>
+                </div>
+                <button class="mt-6 px-6 py-2 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition duration-300">
+                  View Full Story
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Behind the Scenes Stories -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Behind the Scenes
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            The stories behind my favorite photographs
+          </p>
+          <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Story 1 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition duration-500">
+            <img 
+              src="assets/img3.jpg" 
+              alt="Story Image" 
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="bg-indigo-600 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2 inline-block">Adventure</span>
+              <h3 class="text-xl font-bold text-white mb-2">Himalayan Trek</h3>
+              <p class="text-gray-300 text-sm">How I captured this mountain vista after 3 days of trekking at 14,000 feet</p>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="bg-white bg-opacity-90 text-indigo-600 p-2 rounded-full hover:bg-opacity-100 transition duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition duration-500">
+            <img 
+              src="assets/img12.jpg"
+              alt="Story Image" 
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="bg-indigo-600 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2 inline-block">Culture</span>
+              <h3 class="text-xl font-bold text-white mb-2">Tokyo at Night</h3>
+              <p class="text-gray-300 text-sm">Finding the perfect spot to capture the neon lights of Shinjuku</p>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="bg-white bg-opacity-90 text-indigo-600 p-2 rounded-full hover:bg-opacity-100 transition duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition duration-500">
+            <img 
+              src="assets/img10.jpg" 
+              alt="Story Image" 
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="bg-indigo-600 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2 inline-block">People</span>
+              <h3 class="text-xl font-bold text-white mb-2">Portrait in Marrakech</h3>
+              <p class="text-gray-300 text-sm">The story of how I earned the trust to photograph this local artisan</p>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="bg-white bg-opacity-90 text-indigo-600 p-2 rounded-full hover:bg-opacity-100 transition duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="image-gallery.html"><button class="px-8 py-3 border-2 border-indigo-600 text-indigo-600 rounded-full font-medium hover:bg-indigo-600 hover:text-white transition duration-300">
+            View All <Picture></Picture>
+          </button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-900 text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Join My Photography Journey
+          </h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Subscribe for photo stories, editing tips, and new gallery updates
+          </p>
+          <form
+            class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto sm:max-w-xl"
+          >
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900"
+            />
+            <button
+              type="submit"
+              class="bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:bg-indigo-700 transition duration-300"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const filterValue = btn.getAttribute("data-filter");
+
+            // Reset all buttons' classes
+            filterButtons.forEach((b) =>
+              b.classList.remove("bg-indigo-600", "text-white")
+            );
+            filterButtons.forEach((b) =>
+              b.classList.add("bg-gray-200", "text-gray-800")
+            );
+
+            // Active button style
+            btn.classList.remove("bg-gray-200", "text-gray-800");
+            btn.classList.add("bg-indigo-600", "text-white");
+
+            let count = 0;
+
+            galleryItems.forEach((item) => {
+              const itemCategory = item.getAttribute("data-category");
+
+              // If filter is "all", show everything
+              if (filterValue === "all") {
+                item.classList.remove("hidden");
+              } else {
+                // Otherwise, show only 3 matching items
+                if (itemCategory === filterValue && count < 3) {
+                  item.classList.remove("hidden");
+                  count++;
+                } else {
+                  item.classList.add("hidden");
+                }
+              }
+            });
+
+            // If 'all' is selected, show all items again
+            if (filterValue === "all") {
+              galleryItems.forEach((item) => item.classList.remove("hidden"));
+            }
+          });
+        });
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

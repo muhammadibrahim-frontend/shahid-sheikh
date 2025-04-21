@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahid Sheikh | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="index.html"
+            ><div class="text-2xl font-bold text-indigo-700">
+              Shahid Sheikh
+            </div></a
+          >
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >About</a
+            >
+            <a
+              href="travel.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Travel</a
+            >
+            <a
+              href="image-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Photo Gallery</a
+            >
+            <a
+              href="video-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Video Gallery</a
+            >
+            <a
+              href="achievments.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Acheivments</a
+            >
+          </nav>
+
+          <!-- Hamburger Button -->
+<button id="menu-toggle" class="md:hidden text-black focus:outline-none">
+  <svg
+    class="w-7 h-7"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"
+    ></path>
+  </svg>
+</button>
+
+<!-- Sidebar Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 left-0 h-full w-64 bg-black bg-opacity-95 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+>
+  <div class="flex justify-between items-center p-4 border-b border-gray-700">
+    <span class="text-xl font-semibold">Menu</span>
+    <button id="menu-close" class="text-white focus:outline-none">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <nav class="flex flex-col p-6 space-y-4 text-lg">
+    <a href="index.html" class="hover:text-indigo-400">Home</a>
+    <a href="about.html" class="hover:text-indigo-400">About</a>
+    <a href="travel.html" class="hover:text-indigo-400">Travel</a>
+    <a href="image-gallery.html" class="hover:text-indigo-400">Photo Gallery</a>
+    <a href="video-gallery.html" class="hover:text-indigo-400">Video Gallery</a>
+    <a href="achievments.html" class="hover:text-indigo-400">Acheivments</a>
+  </nav>
+</div>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section
+      id="home"
+      class="relative bg-indigo-900 text-white py-20 bg-cover bg-center"
+      style="background-image: url('assets/img2.jpg')"
+    >
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">Shahid Sheikh</h1>
+          <p class="text-xl md:text-2xl mb-8">
+            Entrepreneur | Travel Enthusiast | Content Creator
+          </p>
+          <a
+            href="about.html"
+            class="bg-white text-indigo-900 px-8 py-3 rounded-full font-medium hover:bg-indigo-100 transition duration-300 inline-block"
+            >Explore My Journey</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="md:w-1/2 container mx-auto px-6 my-20">
+        <h2 class="text-3xl font-bold mb-6">Who Am I?</h2>
+        <p class="text-gray-600 mb-6 text-lg">
+          I'm Shahid Sheikh, a UK-based business consultant with over 35 years
+          of experience helping companies achieve their growth objectives. My
+          journey began in London where I started my first business at the age
+          of 25, and since then I've worked with over 200 clients across Europe
+          and North America.
+        </p>
+        <p class="text-gray-600 mb-6 text-lg">
+          My approach combines data-driven analysis with creative
+          problem-solving to deliver tailored solutions for each client. I
+          believe in building long-term relationships and seeing businesses
+          thrive beyond our initial engagement.
+        </p>
+        <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600">
+          <p class="text-indigo-700 font-medium italic">
+            "Success in life comes from hard work, persistence, learning from
+            failure, and staying true to your purpose and passion."
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Quick Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a
+            href="travel.html"
+            class="bg-gray-100 p-8 rounded-lg hover:shadow-lg transition duration-300"
+          >
+            <h3 class="text-xl font-bold mb-4 text-indigo-700">
+              Travel Adventures
+            </h3>
+            <p class="text-gray-600">
+              Explore my journeys across the world and the stories behind them.
+            </p>
+          </a>
+          <a
+            href="image-gallery.html"
+            class="bg-gray-100 p-8 rounded-lg hover:shadow-lg transition duration-300"
+          >
+            <h3 class="text-xl font-bold mb-4 text-indigo-700">
+              Photo Gallery
+            </h3>
+            <p class="text-gray-600">
+              A visual collection of my favorite moments and places.
+            </p>
+          </a>
+          <a
+            href="video-gallery.html"
+            class="bg-gray-100 p-8 rounded-lg hover:shadow-lg transition duration-300"
+          >
+            <h3 class="text-xl font-bold mb-4 text-indigo-700">
+              Video Collection
+            </h3>
+            <p class="text-gray-600">
+              Watch my travel videos and creative projects.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Shahid Sheikh</h3>
+            <p class="text-gray-400">
+              Business consultant and travel enthusiast based in the UK.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="text-gray-400 hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-400 hover:text-white"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="travel.html" class="text-gray-400 hover:text-white"
+                  >Travel</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Media</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="image-gallery.html"
+                  class="text-gray-400 hover:text-white"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="video.html" class="text-gray-400 hover:text-white"
+                  >Videos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="achievements.html"
+                  class="text-gray-400 hover:text-white"
+                  >Achievements</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Connect</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2023 Shahid Sheikh. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

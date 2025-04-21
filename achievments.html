@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achievements | Shahid Sheikh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="index.html"
+            ><div class="text-2xl font-bold text-indigo-700">
+              Shahid Sheikh
+            </div></a
+          >
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >About</a
+            >
+            <a
+              href="travel.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Travel</a
+            >
+            <a
+              href="image-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Photo Gallery</a
+            >
+            <a
+              href="video-gallery.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Video Gallery</a
+            >
+            <a
+              href="achievments.html"
+              class="text-gray-800 hover:text-indigo-600 font-medium"
+              >Acheivments</a
+            >
+          </nav>
+
+          <!-- Hamburger Button -->
+<button id="menu-toggle" class="md:hidden text-black focus:outline-none">
+  <svg
+    class="w-7 h-7"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"
+    ></path>
+  </svg>
+</button>
+
+<!-- Sidebar Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 left-0 h-full w-64 bg-black bg-opacity-95 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden"
+>
+  <div class="flex justify-between items-center p-4 border-b border-gray-700">
+    <span class="text-xl font-semibold">Menu</span>
+    <button id="menu-close" class="text-white focus:outline-none">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <nav class="flex flex-col p-6 space-y-4 text-lg">
+    <a href="index.html" class="hover:text-indigo-400">Home</a>
+    <a href="about.html" class="hover:text-indigo-400">About</a>
+    <a href="travel.html" class="hover:text-indigo-400">Travel</a>
+    <a href="image-gallery.html" class="hover:text-indigo-400">Photo Gallery</a>
+    <a href="video-gallery.html" class="hover:text-indigo-400">Video Gallery</a>
+    <a href="achievments.html" class="hover:text-indigo-400">Acheivments</a>
+  </nav>
+</div>
+      </div>
+    </header>
+
+    <!-- Achievements Banner -->
+    <section
+      class="bg-cover bg-center text-white py-40"
+      style="background-image: url('assets/acheivments.jpg')"
+    >
+      <div class="bg-black bg-opacity-50">
+        <div class="container mx-auto px-6 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">Achievements</h1>
+          <p class="text-xl md:text-2xl">
+            Milestones in my professional and personal journey
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Intro -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">My Journey in Highlights</h2>
+          <p class="text-gray-600 text-lg mb-8">
+            Over the years, I've been fortunate to achieve significant
+            milestones in both my professional career and personal adventures.
+            These accomplishments represent not just endpoints, but stepping
+            stones in my ongoing journey of growth and exploration.
+          </p>
+          <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-600">
+            <p class="text-green-700 font-medium italic">
+              "Success is no accident. It is hard work, perseverance, learning,
+              studying, sacrifice and most of all, love of what you are doing."
+              - Pelé
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Achievements -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Professional Achievements
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+          <!-- Achievement 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/4 mb-4 md:mb-0">
+                <div
+                  class="bg-green-100 text-green-800 px-4 py-3 rounded-lg text-center"
+                >
+                  <div class="font-bold text-2xl">2019</div>
+                </div>
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold mb-2">
+                  UK Business Consultant of the Year
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Awarded by the British Business Awards
+                </p>
+                <p class="text-gray-600">
+                  Recognized for innovative approaches to business growth
+                  strategies that helped clients increase revenue by an average
+                  of 35% within the first year of engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/4 mb-4 md:mb-0">
+                <div
+                  class="bg-green-100 text-green-800 px-4 py-3 rounded-lg text-center"
+                >
+                  <div class="font-bold text-2xl">2017</div>
+                </div>
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold mb-2">Published Author</h3>
+                <p class="text-gray-600 mb-4">
+                  "Scaling Smart: Growth Strategies for Modern Businesses"
+                </p>
+                <p class="text-gray-600">
+                  My book became a bestseller on Amazon in the Business Strategy
+                  category and has been adopted as recommended reading at
+                  several business schools.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/4 mb-4 md:mb-0">
+                <div
+                  class="bg-green-100 text-green-800 px-4 py-3 rounded-lg text-center"
+                >
+                  <div class="font-bold text-2xl">2015</div>
+                </div>
+              </div>
+              <div class="md:w-3/4">
+                <h3 class="text-xl font-semibold mb-2">
+                  Founded Strategic Solutions Ltd.
+                </h3>
+                <p class="text-gray-600 mb-4">My own consulting firm</p>
+                <p class="text-gray-600">
+                  Started with just myself and one assistant, now grown to a
+                  team of 15 consultants serving clients across Europe and North
+                  America with a 95% client retention rate.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Achievements -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Travel Achievements
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Achievement 1 -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="text-green-600 text-4xl mb-4">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Seven Summits</h3>
+            <p class="text-gray-600">
+              Completed climbs of the highest mountains on each continent,
+              including Everest in 2018 and Kilimanjaro in 2016.
+            </p>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="text-green-600 text-4xl mb-4">
+              <i class="fas fa-globe-europe"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">40+ Countries</h3>
+            <p class="text-gray-600">
+              Visited over 40 countries across 6 continents, with a goal to
+              reach 50 by 2025.
+            </p>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="text-green-600 text-4xl mb-4">
+              <i class="fas fa-camera"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Published Photographer</h3>
+            <p class="text-gray-600">
+              Travel photos featured in National Geographic Traveler and Lonely
+              Planet guides.
+            </p>
+          </div>
+
+          <!-- Achievement 4 -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="text-green-600 text-4xl mb-4">
+              <i class="fas fa-language"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Multilingual</h3>
+            <p class="text-gray-600">
+              Fluent in 3 languages (English, Spanish, French) and
+              conversational in 2 more (Japanese, Italian).
+            </p>
+          </div>
+
+          <!-- Achievement 5 -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="text-green-600 text-4xl mb-4">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Culinary Explorer</h3>
+            <p class="text-gray-600">
+              Completed professional cooking courses in 5 countries (France,
+              Italy, Japan, Thailand, Mexico).
+            </p>
+          </div>
+
+          <!-- Achievement 6 -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="text-green-600 text-4xl mb-4">
+              <i class="fas fa-film"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">YouTube Milestone</h3>
+            <p class="text-gray-600">
+              Travel channel reached 100,000 subscribers and 10 million total
+              views in 2022.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Goals -->
+    <section class="py-16 bg-green-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Current Goals</h2>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-6">
+            <!-- Goal 1 -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                <span
+                  class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+                  >1</span
+                >
+                Expand Consulting Business to Asia
+              </h3>
+              <p class="text-gray-600 ml-11">
+                Establishing partnerships in Singapore, Hong Kong, and Tokyo to
+                serve Asian markets.
+              </p>
+            </div>
+
+            <!-- Goal 2 -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                <span
+                  class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+                  >2</span
+                >
+                Complete Trans-Siberian Railway Journey
+              </h3>
+              <p class="text-gray-600 ml-11">
+                Planning a month-long trip from Moscow to Vladivostok,
+                documenting the experience.
+              </p>
+            </div>
+
+            <!-- Goal 3 -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                <span
+                  class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+                  >3</span
+                >
+                Launch Online Business Course
+              </h3>
+              <p class="text-gray-600 ml-11">
+                Creating a comprehensive program to help entrepreneurs scale
+                their businesses.
+              </p>
+            </div>
+
+            <!-- Goal 4 -->
+            <div>
+              <h3 class="text-xl font-semibold mb-2 flex items-center">
+                <span
+                  class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3"
+                  >4</span
+                >
+                Visit Antarctica
+              </h3>
+              <p class="text-gray-600 ml-11">
+                The final continent on my list to complete visiting all seven
+                continents.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-12 bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-semibold mb-4 text-center">
+              My Philosophy on Achievement
+            </h3>
+            <p class="text-gray-600 mb-4">
+              I believe that meaningful achievements come from pursuing goals
+              that align with your values and passions. For me, success is
+              about:
+            </p>
+            <ul class="text-gray-600 space-y-2 max-w-2xl mx-auto">
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                <span>Making a positive impact on others through my work</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                <span>Continuous learning and personal growth</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                <span>Creating memorable experiences and connections</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                <span
+                  >Balancing professional success with personal
+                  fulfillment</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">John Doe</h3>
+            <p class="text-gray-400">
+              Business consultant and travel enthusiast based in the UK.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="text-gray-400 hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-400 hover:text-white"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="travel.html" class="text-gray-400 hover:text-white"
+                  >Travel</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Media</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="gallery.html" class="text-gray-400 hover:text-white"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="videos.html" class="text-gray-400 hover:text-white"
+                  >Videos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="achievements.html"
+                  class="text-gray-400 hover:text-white"
+                  >Achievements</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Connect</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white text-xl"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2023 John Doe. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
